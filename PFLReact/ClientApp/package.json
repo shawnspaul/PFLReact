@@ -3,14 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.5.1",
+    "@material-ui/icons": "^1.0.0-rc.0",
+    "@material/card": "^0.40.1",
+    "axios": "^0.18.0",
+    "base-64": "^0.1.0",
     "bootstrap": "^3.3.7",
+    "material-ui": "^0.20.1",
     "react": "^16.0.0",
+    "react-axios": "^2.0.1",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.0.0",
+    "react-image-carousel": "^2.0.18",
+    "react-image-gallery": "^0.8.12",
+    "react-numeric-input": "^2.2.3",
+    "react-router": "^3.0.5",
     "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "styled-components": "^3.2.6"
   },
   "scripts": {
     "start": "rimraf ./build && react-scripts start",

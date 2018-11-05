@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
@@ -31,9 +31,10 @@ const styles = theme => ({
 });
 
 
-class HomePage extends React.Component {
+class Thanks extends React.Component {
     state = {
         spacing: '16',
+        orderNumber: null
     };
 
     handleChange = key => (event, value) => {
@@ -41,27 +42,24 @@ class HomePage extends React.Component {
             [key]: value,
         });
     };
+
+    componentWillMount() {
+        this.setState({ orderNumber: this.props.match.params.orderid });
+    }
     render() {
         const { classes } = this.props;
         //const { spacing } = this.state;
         return (
             <Grid container className={classes.root} justify="center">
                 <Paper className={classes.paper}>
-                    <h1>Hello, Potential Customer!</h1>
+                    <h1>Thank you for your order!</h1>
                     <div justify="left">
                         <p>
-                            We're implementing our Tactile Marketing Automation campaign and you are here to test it! It'll be fun, we promise!
+                            You're confirmation number is below. Please keep this for your reference.
 						</p>
                         <p>
-                            Buying products from us is simple. You should see a navigation menu on the left; if you click on the "Products" link.
-						    You will be taken to our products page and will be able to see a great list of very cool products!
+                            Confirmation Number: <b>{this.state.orderNumber}</b>
 						</p>
-                        <p>
-                            If for some reason you don't think our products are cool, that's okay. We won't be mad.
-						</p>
-                        <p>
-                            <strong>HAPPY BROWSING!!!</strong>
-                        </p>
                     </div>
                 </Paper>
             </Grid>
@@ -69,9 +67,9 @@ class HomePage extends React.Component {
     }
 }
 
-HomePage.propTypes = {
+Thanks.propTypes = {
     classes: PropTypes.object.isRequired,
 }
 
-const Home = withStyles(styles)(HomePage);
-export {Home};
+const Thankyou = withStyles(styles)(Thanks);
+export { Thankyou };
